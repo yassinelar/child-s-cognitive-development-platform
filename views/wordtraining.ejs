@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Vocabulary Training</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento|Indie+Flower" rel="stylesheet">
+</head>
+
+<body>
+  <form class="" action="/wordtraining" method="post">
+    <div class="centered">
+      <p class="text">Match the Word!</p>
+      <p class="text">You will see a word written on the top of the screen.</p>
+      <p class="text"> Select the word that is closest in meaning to the word at the top of the screen.</p>
+      <br>
+      <div class="centered">
+
+        <h3 class="centered text" style="color:blue"> <%= word %> </h3>
+        <div class="">
+          <div class="skill-test">
+            <h3 class="text"><%= option1 %> </h3>
+            <input id="option1" type="checkbox" name="checkbox" value=<%= option1 %> onChange="this.form.submit()">
+          </div>
+          <div class="skill-test">
+            <h3 class="text"><%= option2 %> </h3>
+            <input id="option2" type="checkbox" name="checkbox" value=<%= option2 %> onChange="this.form.submit()">
+          </div>
+          <div class="skill-test">
+            <h3 class="text"><%= option3 %> </h3>
+            <input id="option3" type="checkbox" name="checkbox" value=<%= option3 %> onChange="this.form.submit()">
+          </div>
+        </div>
+        <br>
+        <div class="">
+          <div class="skill-test">
+            <h3 class="text"><%= option4 %> </h3>
+            <input id="option4" type="checkbox" name="checkbox" value=<%= option4 %> onChange="this.form.submit()">
+          </div>
+          <div class="skill-test">
+            <h3 class="text"><%= option5 %> </h3>
+            <input id="option5" type="checkbox" name="checkbox" value=<%= option5 %> onChange="this.form.submit()">
+          </div>
+          <div class="skill-test">
+            <h3 class="text"><%= option6 %> </h3>
+            <input id="option6" type="checkbox" name="checkbox" value=<%= option6 %> onChange="this.form.submit()">
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+  </form>
+
+  <script type="text/javascript">
+
+  </script>
+</body>

@@ -1,0 +1,107 @@
+<!-- Flower game -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Flower Game</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento|Indie+Flower" rel="stylesheet">
+</head>
+
+<body>
+  <form class="centered" action="/jeu3" method="post">
+    <div class="centered">
+      <p class="text">In the Flower Game, when you see a flower, you press the button on the<b> OPPOSITE</b> side that the flower is on.</p>
+      <p class="text">Press ‘J’ for the RIGHT side of the screen or ‘F’ for the LEFT side of the screen.</p>
+      <p id="ctrFT" class="instructions"> <%= imageFlowerT %> </p>
+      <div class="">
+        <img id="flower" class="hide" width=15% src="flower.PNG" alt="">
+        <img width=15% src="croix.PNG" alt="">
+      </div>
+      <h2></h2>
+    </div>
+    <input id="left-true" type="checkbox" name="leftTrue" value="leftTrue" style='visibility:hidden' onChange="this.form.submit()">
+    <input id="left-false" type="checkbox" name="leftFalse" value="leftFalse" style='visibility:hidden' onChange="this.form.submit()">
+    <input id="right-true" type="checkbox" name="rightTrue" value="rightTrue" style='visibility:hidden' onChange="this.form.submit()">
+    <input id="right-false" type="checkbox" name="rightFalse" value="rightFalse" style='visibility:hidden' onChange="this.form.submit()">
+    <button type="submit" style='visibility:hidden' name="button">Next</button>
+    <br>
+    <div class="div-gallerieL container">
+      <div style=''>
+        <video id="sourcevid" width='200' style='visibility:hidden' autoplay="true"></video>
+        <!-- <div id="message" style='height:20px;width:350px;margin:5px;'>Message:</div> -->
+      </div>
+      <canvas id="cvs" style='visibility:hidden;display:inline-block'></canvas>
+      <!-- <div id="jaxa" style='width:80%;margin:5px;'>Message:</div> -->
+      <textarea id='tar' style='visibility:hidden;width:50%;height:100px;' name="photoURL"></textarea>
+      <!-- <button id="send" type="submit" name="send">send photo to server</button> -->
+    </div>
+  </form>
+
+  <script type="text/javascript">
+    // var randomNumber = Math.floor(Math.random() * 2);
+    // console.log(randomNumber);
+    // randomImageSource="image/heart.PNG";
+    setTimeout(delay1, 1000);
+
+    function delay1() {
+      document.querySelectorAll("img")[1].classList.add("hide");
+      document.querySelectorAll("img")[0].classList.remove("hide");
+    }
+
+    if (document.getElementById("ctrFT").innerText === "R") {
+      document.querySelectorAll("img")[0].classList.add("left");
+      // document.querySelectorAll("img")[0].classList.remove( "hide" );
+    } else {
+      document.querySelectorAll("img")[0].classList.add("right");
+      // document.querySelectorAll("img")[0].classList.remove( "hide" );
+    }
+
+    document.addEventListener("keypress", function(event) {
+      answer(event.key);
+    });
+
+    function answer(key) {
+      switch (key) {
+        case "f":
+          console.log("f");
+          if (document.getElementById("ctrFT").innerText === "R") {
+
+            document.getElementById("left-true").checked = true;
+            document.querySelector("button").click();
+          } else {
+
+            document.getElementById("left-false").checked = true;
+            document.querySelector("button").click();
+          }
+          break;
+
+        case "j":
+          console.log("j");
+          if (document.getElementById("ctrFT").innerText === "L") {
+
+            document.getElementById("right-true").checked = true;
+            document.querySelector("button").click();
+          } else {
+
+            document.getElementById("right-false").checked = true;
+            document.querySelector("button").click();
+          }
+
+          break;
+        default:
+          console.log(key);
+      }
+    }
+    setTimeout(delay, 5000);
+
+    function delay() {
+      document.querySelector("button").click();
+    }
+  </script>
+  <script src="assets/vendor/camera/camera.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>Platform</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento|Indie+Flower" rel="stylesheet">
+</head>
+
+<body>
+  <form class="" action="/strangestory2" method="post">
+    <div class="div-gallerieR container">
+
+      <h2>Story 2</h2>
+      <p>Late one night old Mrs Peabody is walking home. She doesn’t like walking home alone in the dark because she is always afraid that someone will attack her and rob her. She really is a very nervous person! Suddenly, out of the shadows comes a
+        man. He wants to ask Mrs Peabody what time it is, so he walks toward her. When Mrs Peabody sees the man coming toward her, she starts to tremble and says, ‘Take my purse, just don’t hurt me please!’
+      </p>
+      <h3><em>Q2. Why did Mrs Peabody say that?</em></h3>
+
+
+      <div class="">
+        <textarea name="answer2" rows="8" cols="80" placeholder="Write your answer here"></textarea>
+      </div>
+      <button type="submit" name="button">Next</button>
+      <br>
+      <img class="storyimage" src="story2.PNG" alt="">
+      <br>
+      <div class="div-gallerieL container">
+        <div style=''>
+          <video id="sourcevid" style='visibility:hidden' width='200' autoplay="true"></video>
+          <!-- <div id="message" style='height:20px;width:350px;margin:5px;'>Message:</div> -->
+        </div>
+        <canvas id="cvs" style='visibility:hidden;display:inline-block'></canvas>
+        <!-- <div id="jaxa" style='width:80%;margin:5px;'>Message:</div> -->
+        <textarea id='tar' style='visibility:hidden;width:50%;height:100px;' name="photoURL2"></textarea>
+        <!-- <button id="send" type="submit" name="send">send photo to server</button> -->
+      </div>
+
+  </form>
+  </div>
+  <script src="assets/vendor/camera/camera.js"></script>
+</body>
+
+</html>
+
+<%- include("partials/footer"); -%>

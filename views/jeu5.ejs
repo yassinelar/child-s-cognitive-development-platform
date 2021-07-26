@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Numbers Game </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento|Indie+Flower" rel="stylesheet">
+</head>
+
+<body>
+  <form class="" action="/jeu5" method="post">
+    <div class="centered">
+      <p class="text">The computer will show you some numbers</p>
+      <p class="text">Remember the numbers and type them in <b>BACKWARDS</b></p>
+      <div class="centered">
+
+        <h2 class="centered text hide number"><%= number1T %> </h2>
+        <h2 class="centered text hide number"><%= number2T %> </h2>
+        <h2 class="centered text hide number"><%= number3T %> </h2>
+        <h2 class="centered text hide number"><%= number4T %> </h2>
+        <h2 class="centered text hide number"><%= number5T %> </h2>
+
+
+      </div>
+      <h2></h2>
+    </div>
+    <div class="centered">
+      <input id="number" class="hide" type="text" name="number" value="" placeholder="Type here your answer">
+      <button type="submit" class="hide" name="button">Next</button>
+    </div>
+    <br>
+    <div class="div-gallerieL container">
+      <div style=''>
+        <video id="sourcevid" width='200' style='visibility:hidden' autoplay="true"></video>
+        <!-- <div id="message" style='height:20px;width:350px;margin:5px;'>Message:</div> -->
+      </div>
+      <canvas id="cvs" style='visibility:hidden;display:inline-block'></canvas>
+      <!-- <div id="jaxa" style='width:80%;margin:5px;'>Message:</div> -->
+      <textarea id='tar' style='visibility:hidden;width:50%;height:100px;' name="photoURL"></textarea>
+      <!-- <button id="send" type="submit" name="send">send photo to server</button> -->
+    </div>
+
+  </form>
+
+  <script type="text/javascript">
+    function game1() {
+
+      setTimeout(delay1, 500);
+
+      function delay1() {
+        document.querySelectorAll("h2")[0].classList.remove("hide");
+
+      }
+      setTimeout(delay2, 1000);
+
+      function delay2() {
+        document.querySelectorAll("h2")[0].classList.add("hide");
+      }
+
+      setTimeout(delay3, 1500);
+
+      function delay3() {
+        document.querySelectorAll("h2")[1].classList.remove("hide");
+      }
+      setTimeout(delay4, 2000);
+
+      function delay4() {
+        document.querySelectorAll("h2")[1].classList.add("hide");
+      }
+
+      setTimeout(delay5, 2500);
+
+      function delay5() {
+        document.querySelectorAll("h2")[2].classList.remove("hide");
+      }
+      setTimeout(delay6, 3000);
+
+      function delay6() {
+        document.querySelectorAll("h2")[2].classList.add("hide");
+      }
+
+      setTimeout(delay7, 3500);
+
+      function delay7() {
+        document.querySelectorAll("h2")[3].classList.remove("hide");
+      }
+      setTimeout(delay8, 4000);
+
+      function delay8() {
+        document.querySelectorAll("h2")[3].classList.add("hide");
+      }
+
+      setTimeout(delay9, 4500);
+
+      function delay9() {
+        document.querySelectorAll("h2")[4].classList.remove("hide");
+      }
+      setTimeout(delay10, 5000);
+
+      function delay10() {
+        document.querySelectorAll("h2")[4].classList.add("hide");
+      }
+
+      setTimeout(delay11, 5500);
+
+      function delay11() {
+        document.getElementById("number").classList.remove("hide");
+        document.querySelectorAll("button")[0].classList.remove("hide");
+      }
+
+      // setTimeout(delay, 5000);
+      //
+      // function delay() {
+      //   document.querySelector("button").click();
+      // }
+    }
+    game1();
+  </script>
+  <script src="assets/vendor/camera/camera.js"></script>
+</body>
+
+</html>

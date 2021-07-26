@@ -1,0 +1,28 @@
+<%- include("partials/header"); -%>
+<h2>Welcome to the Emotion Recognition Game !</h2>
+<p class="text">Listen to the instructions below</p>
+<br>
+<figure>
+  <audio src="Emotion.m4a" controls>
+    Votre navigateur ne supporte pas l'élément <code>audio</code>.
+  </audio>
+</figure>
+<p class="text">Watch each face carefully.</p>
+<p class="text">Then select the answer that matches how the person was feeling.</p>
+<br>
+
+<div class="centered">
+  <li class="text">1=Happy</li>
+  <li class="text">2=Sad</li>
+  <li class="text">3=Fearful</li>
+  <li class="text">4=Angry</li>
+  <li class="text">5=Neutral</li>
+  <br>
+</div>
+<br>
+<p class="text"> Before starting, let's try some examples!</p>
+
+<br>
+<button class="btn btn-outline-light" type="submit" name="button"><a href="emotiontraining">Let's try!</a></button>
+
+<%- include("partials/footer"); -%>

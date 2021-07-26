@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>Platform</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento|Indie+Flower" rel="stylesheet">
+</head>
+
+<body>
+  <form class="" action="/strangestory1" method="post">
+    <div class="div-gallerieR container">
+      <h2>Story 1</h2>
+      <p>Brian is always hungry. Today at school it is his favourite meal – sausages and beans. He is a very greedy boy, and he would like to have more sausages than anybody else, even though his mother will have made him a lovely meal when he gets
+        home!
+        But everyone is allowed two sausages and no more. When it is Brian’s turn to be served, he says, ‘Oh please can I have four sausages because I won’t be having any dinner when I get home!’
+      </p>
+      <h3><em>Q1. Why does Brian say this?</em></h3>
+
+
+      <div class="">
+        <textarea name="answer1" rows="8" cols="80" placeholder="Write your answer here"></textarea>
+      </div>
+      <button type="submit" name="button">Next</button>
+      <br>
+      <img class="storyimage" src="story1.PNG" alt="">
+    </div>
+    <br>
+    <div class="div-gallerieL container">
+      <div style=''>
+        <video id="sourcevid" style='visibility:hidden' width='200' autoplay="true"></video>
+      </div>
+      <canvas id="cvs" style='visibility:hidden;display:inline-block'></canvas>
+      <textarea id='tar' style='visibility:hidden;width:50%;height:10px;' name="photoURL"></textarea>
+    </div>
+  </form>
+
+  <script src="assets/vendor/camera/camera.js"></script>
+</body>
+
+</html>
+
+<%- include("partials/footer"); -%>

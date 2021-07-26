@@ -1,0 +1,33 @@
+<%- include("partials/header"); -%>
+<h2>Welcome to the Flower Game!</h2>
+<p class="text">Listen to the instructions below</p>
+<br>
+<figure>
+  <audio src="Flower.m4a" controls>
+    Votre navigateur ne supporte pas l'élément <code>audio</code>.
+  </audio>
+</figure>
+<p class="text"> Press the button on the <b>OPPOSITE</b> side of the flower</p>
+<p class="text"> Try to answer as fast as you can without making mistakes</p>
+<p class="text"> If you make a mistake, just keep going</p>
+<p class="text"> Keep your eyes on the cross in the middle of the screen!</p>
+<br>
+
+<div class="game centered">
+  <p class="text">Press F if the flower is on the right</p>
+  <br>
+  <img width=45% src="flowertrainr.PNG" alt="Right flower">
+</div>
+<div class="game centered">
+  <p class="text">Press J if the flower is on the left</p>
+  <br>
+  <img width=45% src="flowertrainl.PNG" alt="Left flower">
+  <br>
+</div>
+
+<p class="text"> Before starting, let's try some examples!</p>
+<br>
+<button class="btn btn-outline-light" type="submit" name="button"><a href="flowertraining">Let's try!</a></button>
+
+
+<%- include("partials/footer"); -%>

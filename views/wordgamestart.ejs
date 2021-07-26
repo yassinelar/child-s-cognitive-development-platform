@@ -1,0 +1,25 @@
+<%- include("partials/header"); -%>
+<h3 class="centered text"> <%= wordMessage %> </h3>
+<p id="txt" class="text hide">Now you've practiced, let's have a go for real! !</p>
+<p class="text"></p>
+<br>
+<button class="btn btn-outline-light hide" type="submit" name="button"><a href="jeu6">Let's start!</a></button>
+
+<script type="text/javascript">
+  function game1() {
+
+    setTimeout(delay0, 1500);
+
+    function delay0() {
+      document.querySelectorAll("h3")[0].classList.add("hide");
+    }
+
+    setTimeout(delay1, 2000);
+
+    function delay1() {
+      document.getElementById("txt").classList.remove("hide");
+      document.querySelectorAll("button")[0].classList.remove("hide");
+    }
+  }
+  game1();
+</script>

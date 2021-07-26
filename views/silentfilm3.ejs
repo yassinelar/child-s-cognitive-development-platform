@@ -1,0 +1,78 @@
+<%- include("partials/header"); -%>
+<h2>Film 3</h2>
+
+<!-- insertion film -->
+<div id="player"></div>
+
+<script>
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  var player;
+
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '360',
+      width: '640',
+      videoId: 'ofHwtebSbiU',
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+
+  // 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
+    event.target.mute();
+  }
+
+  // 5. The API calls this function when the player's state changes.
+  //    The function indicates that when playing a video (state=1),
+  //    the player should play for six seconds and then stop.
+  var done = false;
+
+  function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+      done = true;
+    }
+    setTimeout(delay1, 45000);
+
+    function delay1() {
+      document.getElementById("player").classList.add("hide")
+      document.getElementById("answer3").classList.remove("hide");
+      document.getElementById("nextbutton").classList.remove("hide");
+    }
+  }
+
+  function stopVideo() {
+    player.stopVideo();
+  }
+</script>
+<form class="" action="/silentfilm3" method="post">
+  <div id="answer3" class=" hide">
+    <h3><em>Q4. What do you think the delivery man is feeling and why?</em></h3>
+    <textarea name="answerF3" rows="8" cols="80" placeholder="Write your answer here"></textarea>
+    <br>
+    <button id="nextbutton" class="nextbutton hide" type="submit" name="button">Next</button>
+  </div>
+  <div class="div-gallerieL container">
+    <div style=''>
+      <video id="sourcevid" width='200' style='visibility:hidden' autoplay="true"></video>
+      <!-- <div id="message" style='height:20px;width:350px;margin:5px;'>Message:</div> -->
+    </div>
+    <canvas id="cvs" style='visibility:hidden;display:inline-block'></canvas>
+    <!-- <div id="jaxa" style='width:80%;margin:5px;'>Message:</div> -->
+    <textarea id='tar' style='visibility:hidden;width:50%;height:100px;' name="photoURL3"></textarea>
+    <!-- <button id="send" type="submit" name="send">send photo to server</button> -->
+  </div>
+  <script src="assets/vendor/camera/camera.js"></script>
+</form>
+
+<%- include("partials/footer"); -%>

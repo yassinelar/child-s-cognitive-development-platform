@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Numbers Game Training</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento|Indie+Flower" rel="stylesheet">
+</head>
+
+
+<body>
+  <form class="" action="/numbertraining" method="post">
+    <div class="centered">
+      <p class="text">The computer will show you some numbers</p>
+      <p class="text">Remember the numbers and type them in <b>BACKWARDS</b></p>
+      <div class="centered">
+
+        <h2 class="centered text hide number"><%= number1 %> </h2>
+        <h2 class="centered text hide number"><%= number2 %> </h2>
+
+
+
+      </div>
+      <h3><%= message %></h3>
+    </div>
+    <div class="centered">
+      <br>
+      <input id="number" class="hide" type="text" name="number" value="" placeholder="Type here your answer">
+      <button type="submit" class="hide" name="button">Next</button>
+    </div>
+
+  </form>
+
+  <script type="text/javascript">
+    function game1() {
+
+      setTimeout(delay0, 1500);
+
+      function delay0() {
+        document.querySelectorAll("h3")[0].classList.add("hide");
+      }
+
+      setTimeout(delay1, 2000);
+
+      function delay1() {
+        document.querySelectorAll("h2")[0].classList.remove("hide");
+      }
+
+      setTimeout(delay2, 2500);
+
+      function delay2() {
+        document.querySelectorAll("h2")[0].classList.add("hide");
+      }
+
+      setTimeout(delay3, 3000);
+
+      function delay3() {
+        document.querySelectorAll("h2")[1].classList.remove("hide");
+      }
+      setTimeout(delay4, 3500);
+
+      function delay4() {
+        document.querySelectorAll("h2")[1].classList.add("hide");
+      }
+
+
+      setTimeout(delay11, 4000);
+
+      function delay11() {
+        document.getElementById("number").classList.remove("hide");
+        document.querySelectorAll("button")[0].classList.remove("hide");
+      }
+    }
+    game1();
+    // setTimeout(delay, 10000);
+    // function delay()
+    //   {document.querySelector("button").click();}
+  </script>
+  <!-- <script src="poisson.js" charset="utf-8"></script> -->
+</body>
+
+</html>

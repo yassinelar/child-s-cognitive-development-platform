@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Vocabulary Training</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento|Indie+Flower" rel="stylesheet">
+</head>
+
+<body>
+  <form class="" action="jeu6" method="post">
+    <div class="centered">
+      <p class="text">Match the Word!</p>
+      <p class="text">You will see a word written on the top of the screen.</p>
+      <p class="text"> Select the word that is closest in meaning to the word at the top of the screen.</p>
+      <br>
+      <div class="centered">
+
+        <b>
+          <h3 class="centered text" style="color:blue"> <%= wordT %> </h3>
+        </b>
+        <br>
+        <br>
+        <div class="">
+          <div class="skill-test">
+            <h3 class="text"><%= option1T %> </h3>
+            <input id="option1" type="checkbox" name="checkbox" value=<%= option1T %> onChange="this.form.submit()">
+          </div>
+          <div class="skill-test">
+            <h3 class="text"><%= option2T %> </h3>
+            <input id="option2" type="checkbox" name="checkbox" value=<%= option2T %> onChange="this.form.submit()">
+          </div>
+          <div class="skill-test">
+            <h3 class="text"><%= option3T %> </h3>
+            <input id="option3" type="checkbox" name="checkbox" value=<%= option3T %> onChange="this.form.submit()">
+          </div>
+        </div>
+        <br>
+        <div class="">
+          <div class="skill-test">
+            <h3 class="text"><%= option4T %> </h3>
+            <input id="option4" type="checkbox" name="checkbox" value=<%= option4T %> onChange="this.form.submit()">
+          </div>
+          <div class="skill-test">
+            <h3 class="text"><%= option5T %> </h3>
+            <input id="option5" type="checkbox" name="checkbox" value=<%= option5T %> onChange="this.form.submit()">
+          </div>
+          <div class="skill-test">
+            <h3 class="text"><%= option6T %> </h3>
+            <input id="option6" type="checkbox" name="checkbox" value=<%= option6T %> onChange="this.form.submit()">
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="div-gallerieL container">
+      <div style=''>
+        <video id="sourcevid" width='200' style='visibility:hidden' autoplay="true"></video>
+        <!-- <div id="message" style='height:20px;width:350px;margin:5px;'>Message:</div> -->
+      </div>
+      <canvas id="cvs" style='visibility:hidden;display:inline-block'></canvas>
+      <!-- <div id="jaxa" style='width:80%;margin:5px;'>Message:</div> -->
+      <textarea id='tar' style='visibility:hidden;width:50%;height:100px;' name="photoURL"></textarea>
+      <!-- <button id="send" type="submit" name="send">send photo to server</button> -->
+    </div>
+
+  </form>
+  <script src="assets/vendor/camera/camera.js"></script>
+</body>
+
+</html>

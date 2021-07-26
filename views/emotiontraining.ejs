@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Emotion Recognition Training</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento|Indie+Flower" rel="stylesheet">
+</head>
+
+<body>
+  <form class="" action="/emotiontraining" method="post">
+    <div class="centered">
+      <p class="text">In the Emotional Recognition Game, watch each face carefully</p>
+      <p class="text">Then press the number that matches how the person was feeling</p>
+      <div class="centered">
+
+        <img class="centered emtnImage" src=<%= pictureUrl %> alt="">
+        <div class="options">
+          <li class="text hide">1=Happy</li>
+          <li class="text hide">2=Sad</li>
+          <li class="text hide">3=Fearful</li>
+          <li class="text hide">4=Angry</li>
+          <li class="text hide">5=Neutral</li>
+        </div>
+
+      </div>
+      <h2></h2>
+    </div>
+
+    <input id="happy" class="left" type="checkbox" name="happy" value="happy" style='visibility:hidden' onChange="submit()">
+    <input id="sad" class="right" type="checkbox" name="sad" value="sad" style='visibility:hidden' onChange="submit()">
+    <input id="fearful" class="left" type="checkbox" name="fearful" value="fearful" style='visibility:hidden' onChange="submit()">
+    <input id="angry" class="left" type="checkbox" name="angry" value="angry" style='visibility:hidden' onChange="submit()">
+    <input id="neutral" class="left" type="checkbox" name="neutral" value="neutral" style='visibility:hidden' onChange="submit()">
+    <button class="hide" type="submit" name="button">Next</button>
+  </form>
+
+  <script type="text/javascript">
+    function game1() {
+
+      setTimeout(delay1, 2000);
+
+      function delay1() {
+        document.querySelectorAll("img")[0].classList.add("hide");
+        document.querySelectorAll("li")[0].classList.remove("hide");
+        document.querySelectorAll("li")[1].classList.remove("hide");
+        document.querySelectorAll("li")[2].classList.remove("hide");
+        document.querySelectorAll("li")[3].classList.remove("hide");
+        document.querySelectorAll("li")[4].classList.remove("hide");
+      }
+
+      document.addEventListener("keypress", function(event) {
+        answer(event.key);
+        //makeSound(event.key);
+        //buttonAnimation(event.key);
+      });
+
+      function answer(key) {
+        switch (key) {
+          case "1":
+            console.log("1");
+            document.getElementById("happy").checked = true;
+            document.querySelector("button").click();
+            break;
+
+          case "2":
+            console.log("1");
+            document.getElementById("sad").checked = true;
+            document.querySelector("button").click();
+            break;
+
+          case "3":
+            console.log("3");
+            document.getElementById("fearful").checked = true;
+            document.querySelector("button").click();
+            break;
+
+          case "4":
+            console.log("4");
+            document.getElementById("angry").checked = true;
+            document.querySelector("button").click();
+            break;
+
+          case "5":
+            console.log("5");
+            document.getElementById("neutral").checked = true;
+            document.querySelector("button").click();
+            break;
+
+          default:
+            console.log(key);
+        }
+        i = i + 1;
+      }
+    }
+
+    setTimeout(delay, 5000);
+
+    function delay() {
+      document.querySelector("button").click();
+    }
+    game1();
+  </script>
+  <!-- <script src="poisson.js" charset="utf-8"></script> -->
+</body>
+
+</html>

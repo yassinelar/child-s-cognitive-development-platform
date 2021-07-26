@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>Platform</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento|Indie+Flower" rel="stylesheet">
+
+</head>
+
+<body>
+  <form class="" action="/strangestory4" method="post">
+    <div class="div-gallerieR container">
+      <h2>Story 4</h2>
+      <p>Simon is a big liar. Simon’s brother Jim knows this, he knows that Simon never tells the truth! Now yesterday Simon stole Jim’s table-tennis paddle, and Jim knows Simon has hidden it somewhere, though he can’t find it. He’s very cross. So he
+        finds Simon and he says, ‘Where is my table-tennis paddle? You must have hidden it either in the cupboard or under your bed, because I’ve looked everywhere else. Where is it, in the cupboard or under your bed?’ Simon tells him the paddle is
+        under his bed.
+      </p>
+      <h3><em>Q4. Why will Jim look in the cupboard for the paddle?</em></h3>
+      <div class="">
+        <textarea name="answer4" rows="8" cols="80" placeholder="Write your answer here"></textarea>
+      </div>
+      <button type="submit" name="button">Next</button>
+      <br>
+      <img class="storyimage" src="story4.PNG" alt="">
+      <br>
+      <div class="div-gallerieL container">
+        <div style=''>
+          <video id="sourcevid" style='visibility:hidden' width='200' autoplay="true"></video>
+          <!-- <div id="message" style='height:20px;width:350px;margin:5px;'>Message:</div> -->
+        </div>
+        <canvas id="cvs" style='visibility:hidden;display:inline-block'></canvas>
+        <!-- <div id="jaxa" style='width:80%;margin:5px;'>Message:</div> -->
+        <textarea id='tar' style='visibility:hidden;width:50%;height:100px;' name="photoURL4"></textarea>
+        <!-- <button id="send" type="submit" name="send">send photo to server</button> -->
+      </div>
+  </form>
+  </div>
+  <script src="assets/vendor/camera/camera.js"></script>
+</body>
+
+</html>
+
+<%- include("partials/footer"); -%>

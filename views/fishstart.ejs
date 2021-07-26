@@ -1,0 +1,37 @@
+<%- include("partials/header"); -%>
+<h2>Welcome to the Fish Game !</h2>
+<p class="text">Listen to the instructions below</p>
+<br>
+<figure>
+  <audio src="Fish.m4a" controls>
+    Votre navigateur ne supporte pas l'élément <code>audio</code>.
+  </audio>
+</figure>
+<p class="text">The fish will be swimming with other fish</p>
+<p class="text">You should pay attention to the fish in the middle.</p>
+<br>
+<img width=15% src="droite.PNG" alt="">
+<img width=15% src="droite.PNG" alt="">
+<img class=centerimage width=15% src="gauche.PNG" alt="">
+<img width=15% src="droite.PNG" alt="">
+<img width=15% src="droite.PNG" alt="">
+<br>
+<br>
+<div class="game centered">
+  <p class="text">Press J if the fish is swimming to the right</p>
+  <br>
+  <img src="droite.PNG" width=30% alt="Right fish">
+</div>
+<div class="game centered">
+  <p class="text">Press F if the fish is swimming to the left</p>
+  <br>
+  <img width=30% src="gauche.PNG" alt="Left fish">
+</div>
+<br>
+<p class="text"> Before starting, let's try some examples!</p>
+
+<br>
+<button class="btn btn-outline-light" type="submit" name="button"><a href="fishtraining">Let's try!</a></button>
+
+
+<%- include("partials/footer"); -%>

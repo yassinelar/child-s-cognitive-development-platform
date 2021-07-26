@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Flower Game Training</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento|Indie+Flower" rel="stylesheet">
+
+</head>
+
+<body>
+  <form class="centered" action="/flowertraining" method="post">
+    <div class="centered">
+      <p class="text">In the Flower Game, when you see a flower, you press the button on the<b> OPPOSITE</b> side that the flower is on.</p>
+      <p class="text">Press ‘J’ for the RIGHT side of the screen or ‘F’ for the LEFT side of the screen.</p>
+      <p id="ctrF" class="instructions"> <%= imageFlower %> </p>
+      <div class="">
+        <img id="flower" class="hide" width=15% src="flower.PNG" alt="">
+        <img width=15% src="croix.PNG" alt="">
+      </div>
+      <h3 class="text"></h3>
+    </div>
+    <input id="left-true" type="checkbox" name="leftTrue" value="leftTrue" style='visibility:hidden' onChange="this.form.submit()">
+    <input id="left-false" type="checkbox" name="leftFalse" value="leftFalse" style='visibility:hidden' onChange="this.form.submit()">
+    <input id="right-true" type="checkbox" name="rightTrue" value="rightTrue" style='visibility:hidden' onChange="this.form.submit()">
+    <input id="right-false" type="checkbox" name="rightFalse" value="rightFalse" style='visibility:hidden' onChange="this.form.submit()">
+    <button type="submit" style='visibility:hidden' name="button">Next</button>
+  </form>
+
+  <script type="text/javascript">
+    // var randomNumber = Math.floor(Math.random() * 2);
+    // console.log(randomNumber);
+    // randomImageSource="image/heart.PNG";
+    setTimeout(delay1, 1000);
+
+    function delay1() {
+      document.querySelectorAll("img")[1].classList.add("hide");
+      document.querySelectorAll("img")[0].classList.remove("hide");
+    }
+
+    if (document.getElementById("ctrF").innerText === "R") {
+      document.querySelectorAll("img")[0].classList.add("left");
+      // document.querySelectorAll("img")[0].classList.remove( "hide" );
+    } else {
+      document.querySelectorAll("img")[0].classList.add("right");
+      // document.querySelectorAll("img")[0].classList.remove( "hide" );
+    }
+
+    document.addEventListener("keypress", function(event) {
+      answer(event.key);
+    });
+
+    function answer(key) {
+      switch (key) {
+        case "f":
+          console.log("f");
+          if (document.getElementById("ctrF").innerText === "R") {
+            document.querySelector("h3").innerHTML = "Correct answer! Good job!";
+            document.getElementById("left-true").checked = true;
+            document.querySelector("button").click();
+          } else {
+            document.querySelector("h3").innerHTML = "Answer not correct!";
+            document.getElementById("left-false").checked = true;
+            document.querySelector("button").click();
+          }
+          // document.getElementById("1").checked=true;
+
+          break;
+
+        case "j":
+          console.log("j");
+          if (document.getElementById("ctrF").innerText === "L") {
+            document.querySelector("h3").innerHTML = "Correct answer! Good job!";
+            document.getElementById("right-true").checked = true;
+            document.querySelector("button").click();
+          } else {
+            document.querySelector("h3").innerHTML = "Answer not correct!";
+            document.getElementById("right-false").checked = true;
+            document.querySelector("button").click();
+          }
+
+
+          break;
+        default:
+          console.log(key);
+      }
+    }
+    setTimeout(delay, 5000);
+
+    function delay() {
+      document.querySelector("button").click();
+    }
+  </script>
+
+</body>
+
+</html>

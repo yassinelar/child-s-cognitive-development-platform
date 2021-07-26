@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Fish Game Training</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento|Indie+Flower" rel="stylesheet">
+
+</head>
+
+<body>
+  <form class="centered" action="/fishtraining" method="post">
+    <div class="centered">
+      <p class="text">Feed the middle fish by pressing the button on the side where the fish is facing.</p>
+      <p class="text">Press ‘J’ for the RIGHT side of the screen or ‘F’ for the LEFT side of the screen.</p>
+      <p id="ctr" class="instructions"> <%= imageC %></p>
+      <div class="">
+        <img width=15% src=<%= fishR %> alt="">
+        <img width=15% src=<%= fishR %> alt="">
+        <img width=15% src=<%= fishC %> alt="">
+        <img width=15% src=<%= fishR %> alt="">
+        <img width=15% src=<%= fishR %> alt="">
+      </div>
+      <h3 class="text"></h3>
+    </div>
+    <input id="left-true" type="checkbox" name="leftTrue" value="leftTrue" style='visibility:hidden' onChange="this.form.submit()">
+    <input id="left-false" type="checkbox" name="leftFalse" value="leftFalse" style='visibility:hidden' onChange="this.form.submit()">
+    <input id="right-true" type="checkbox" name="rightTrue" value="rightTrue" style='visibility:hidden' onChange="this.form.submit()">
+    <input id="right-false" type="checkbox" name="rightFalse" value="rightFalse" style='visibility:hidden' onChange="this.form.submit()">
+    <br>
+    <button type="submit" style='visibility:hidden' name="button">Next</button>
+  </form>
+
+  <script type="text/javascript">
+    function game1() {
+
+      /*  var randomNumbers=[];
+        var randomImageSource="";
+        for (var i=0; i<5;i++){
+
+          var randomNumber = Math.floor(Math.random() * 2);
+          console.log(randomNumber);
+          randomNumbers.push(randomNumber);
+          if (randomNumber===0){
+            randomImageSource="droite.PNG";
+            var image1 = document.querySelectorAll("img")[i];
+            image1.setAttribute("src", randomImageSource);
+          }
+          else{
+            randomImageSource="gauche.PNG";
+            var image1 = document.querySelectorAll("img")[i];
+            image1.setAttribute("src", randomImageSource);
+          }
+        }
+      */
+
+      document.addEventListener("keypress", function(event) {
+        answer(event.key);
+        //makeSound(event.key);
+        //buttonAnimation(event.key);
+      });
+
+      function answer(key) {
+        console.log(document.getElementById("ctr").innerText);
+        switch (key) {
+          case "j":
+            console.log("j");
+
+            // console.log(document.getElementById("center").src);
+            if (document.getElementById("ctr").innerText === "1") {
+              document.querySelector("h3").innerHTML = "Correct answer! Good job!";
+              document.getElementById("right-true").checked = true;
+              document.querySelector("button").click();
+            } else {
+              document.querySelector("h3").innerHTML = "Answer not correct!";
+              document.getElementById("right-false").checked = true;
+              document.querySelector("button").click();
+            }
+
+
+            break;
+
+          case "f":
+            console.log("f");
+            if (document.getElementById("ctr").innerText === "0") {
+              document.querySelector("h3").innerHTML = "Correct answer! Good job!";
+              document.getElementById("left-true").checked = true;
+              document.querySelector("button").click();
+            } else {
+              document.querySelector("h3").innerHTML = "Answer not correct!";
+              document.getElementById("left-false").checked = true;
+              document.querySelector("button").click();
+            }
+
+            // document.querySelector("button").click();
+
+            break;
+          default:
+            console.log(key);
+        }
+      }
+    }
+
+    setTimeout(delay, 5000);
+
+    function delay() {
+      document.querySelector("button").click();
+    }
+    game1();
+  </script>
+  <!-- <script src="poisson.js" charset="utf-8"></script> -->
+</body>
+
+</html>
